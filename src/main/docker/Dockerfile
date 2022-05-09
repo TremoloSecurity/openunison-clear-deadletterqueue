@@ -1,14 +1,14 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER Tremolo Security, Inc.  - Docker <docker@tremolosecurity.com>
 
-ENV JDK_VERSION=1.8.0 \
+ENV JDK_VERSION=1.11.0 \
     OPENUNISON_VERSION="1.0.30"
 
 LABEL io.k8s.description="Job to clear dead letter queues" \
       io.k8s.display-name="OpenUnison Dead Letter Queue Clearer" 
 
-RUN apt-get update;apt-get -y install curl openjdk-8-jdk-headless ;apt-get -y upgrade;apt-get clean;rm -rf /var/lib/apt/lists/*; \ 
+RUN apt-get update;apt-get -y install curl openjdk-11-jdk-headless ;apt-get -y upgrade;apt-get clean;rm -rf /var/lib/apt/lists/*; \ 
     mkdir -p /usr/local/openunison && \
     groupadd -r openunison -g 433 && \
     useradd -u 431 -r -g openunison -d /usr/local/openunison -s /sbin/nologin -c "OpenUnison Docker image user" openunison && \
