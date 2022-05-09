@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 MAINTAINER Tremolo Security, Inc.  - Docker <docker@tremolosecurity.com>
 
 ENV JDK_VERSION=1.8.0 \
-    OPENUNISON_VERSION="1.0.21"
+    OPENUNISON_VERSION="1.0.30"
 
 LABEL io.k8s.description="Job to clear dead letter queues" \
       io.k8s.display-name="OpenUnison Dead Letter Queue Clearer" 
